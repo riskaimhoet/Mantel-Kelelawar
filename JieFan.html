@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JieFan Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #e6f7f7, #cce5e5);
+      color: #003333;
+      text-align: center;
+    }
+
+    header {
+      background: #00bfa6;
+      color: white;
+      padding: 25px;
+      border-bottom: 5px solid #00897b;
+    }
+
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      font-size: 28px;
+      margin: 10px 0;
+    }
+
+    .quote {
+      font-style: italic;
+      margin-top: 8px;
+      color: #e0f7f7;
+    }
+
+    .bio {
+      margin: 20px auto;
+      padding: 20px;
+      background: #ffffffdd;
+      border-radius: 15px;
+      max-width: 600px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .bio p {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+
+    .stickers {
+      margin: 25px;
+    }
+
+    .stickers img {
+      width: 90px;
+      margin: 10px;
+    }
+
+    .journal {
+      margin: 30px auto;
+      max-width: 600px;
+      background: #f0fdfd;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #00bfa6;
+      resize: none;
+      font-family: inherit;
+    }
+
+    button {
+      margin-top: 10px;
+      background: #00bfa6;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #00897b;
+    }
+
+    .notes {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .note {
+      background: #e0f7f7;
+      border-left: 5px solid #00bfa6;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="jiefan-profile.jpg" alt="JieFan">
+    <h1>JieFan ⚕️🩺</h1>
+    <p class="quote">"Healing one heart at a time 💙"</p>
+  </header>
+
+  <section class="bio">
+    <h2>About Jie Fan</h2>
+    <p><strong>Nama:</strong> Herjelita S. Pakilaran</p>
+    <p><strong>Birthday:</strong> 28 Januari 2004</p>
+    <p><strong>Contact:</strong> @jelitaa.sp</p>
+  </section>
+
+  <div class="stickers">
+    <img src="https://i.ibb.co/ZLqJrxW/stethoscope.png" alt="Stethoscope">
+    <img src="https://i.ibb.co/ZVwPxdx/medical-cross.png" alt="Medical Cross">
+    <img src="https://i.ibb.co/b7DxB2F/heartbeat.png" alt="Heartbeat">
+  </div>
+
+  <section class="journal">
+    <h2>Leave a Letter 💌</h2>
+    <textarea id="noteInput" placeholder="Write your support or message here..."></textarea>
+    <br>
+    <button onclick="addNote()">Send</button>
+    <div class="notes" id="notes"></div>
+  </section>
+
+  <script>
+    function addNote() {
+      const noteInput = document.getElementById("noteInput");
+      const notes = document.getElementById("notes");
+      if(noteInput.value.trim() !== "") {
+        const newNote = document.createElement("div");
+        newNote.className = "note";
+        newNote.innerText = noteInput.value;
+        notes.appendChild(newNote);
+        noteInput.value = "";
+      }
+    }
+  </script>
+</body>
+</html>

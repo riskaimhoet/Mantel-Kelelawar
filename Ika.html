@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ika Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom right, #0d0d0d, #1a1a1a);
+      color: #f5f5f5;
+      text-align: center;
+    }
+
+    header {
+      background: #111;
+      padding: 25px;
+      border-bottom: 3px solid #444;
+    }
+
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #f5f5f5;
+      box-shadow: 0px 4px 12px rgba(255,255,255,0.15);
+    }
+
+    h1 {
+      font-size: 28px;
+      margin: 10px 0;
+      letter-spacing: 1px;
+    }
+
+    .icon {
+      font-size: 32px;
+      margin-left: 5px;
+      color: #d4af37; /* emas elegan */
+    }
+
+    .quote {
+      font-style: italic;
+      margin-top: 6px;
+      color: #cccccc;
+    }
+
+    .bio {
+      margin: 25px auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      max-width: 650px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.6);
+    }
+
+    .bio p {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+
+    .stickers {
+      margin: 30px;
+    }
+
+    .stickers img {
+      width: 90px;
+      margin: 12px;
+      filter: brightness(0.9);
+    }
+
+    .journal {
+      margin: 30px auto;
+      max-width: 650px;
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 12px rgba(255,255,255,0.05);
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #555;
+      resize: none;
+      font-family: inherit;
+      background: #0d0d0d;
+      color: #f5f5f5;
+    }
+
+    button {
+      margin-top: 12px;
+      background: #d4af37;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #b68f2d;
+    }
+
+    .notes {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .note {
+      background: rgba(255,255,255,0.08);
+      border-left: 4px solid #d4af37;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="ika-profile.jpg" alt="Ika">
+    <h1>Ika <span class="icon">🧠🔱</span></h1>
+    <p class="quote">"Unveiling truths hidden in the shadows."</p>
+  </header>
+
+  <section class="bio">
+    <h2>About Ika</h2>
+    <p><strong>Nama:</strong> Riska Kasdim</p>
+    <p><strong>Birthday:</strong> 12 Februari 2004</p>
+    <p><strong>Contact:</strong> @riskakasdim_</p>
+  </section>
+
+  <div class="stickers">
+    <img src="https://i.ibb.co/R6sVbZ2/scales.png" alt="Justice Scales">
+    <img src="https://i.ibb.co/fpr3xGN/trident.png" alt="Trident Logo">
+    <img src="https://i.ibb.co/0JfKqQW/magnifier.png" alt="Magnifying Glass">
+  </div>
+
+  <section class="journal">
+    <h2>Anonymous Notes 🕵️</h2>
+    <textarea id="noteInput" placeholder="Write your thoughts or confessions here..."></textarea>
+    <br>
+    <button onclick="addNote()">Submit</button>
+    <div class="notes" id="notes"></div>
+  </section>
+
+  <script>
+    function addNote() {
+      const noteInput = document.getElementById("noteInput");
+      const notes = document.getElementById("notes");
+      if(noteInput.value.trim() !== "") {
+        const newNote = document.createElement("div");
+        newNote.className = "note";
+        newNote.innerText = noteInput.value;
+        notes.appendChild(newNote);
+        noteInput.value = "";
+      }
+    }
+  </script>
+</body>
+</html>
