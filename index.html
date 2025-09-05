@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Mantel Kelelawar</title>
+  <style>
+    body {
+      background-color: #fff0f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+    }
+    h1 {
+      color: #ff1493;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px #ffc0cb;
+    }
+    .names {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    a.friend {
+      background: #ffe4f2;
+      padding: 10px 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #d63384;
+      text-decoration: none;
+      position: relative;
+      transition: 0.3s;
+    }
+    a.friend::before {
+      content: "💖";
+      position: absolute;
+      left: -20px;
+      animation: float 3s infinite ease-in-out;
+    }
+    a.friend:hover {
+      background: #ffb6c1;
+      transform: scale(1.1);
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+</head>
+<body>
+  <h1>✨ Mantel Kelelawar ✨</h1>
+  <div class="names">
+    <a href="JinLing.html" class="friend">Lie Jin Ling</a>
+    <a href="HuiZhen.html" class="friend">Dai Hui Zhen</a>
+    <a href="PeiChuen.html" class="friend">Kwan Pei Chuen</a>
+    <a href="JieFan.html" class="friend">Li Jie Fan</a>
+    <a href="Ika.html" class="friend">Ika</a>
+  </div>
+</body>
+</html>
